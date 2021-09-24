@@ -43,12 +43,8 @@ void MyTimer( TimerHandle_t Timer_Function1 )
 {
     uint8_t colors[7]={2,4,6,8,10,12,14};   /*LED colors*/
       static  uint8_t i=0;
-        while(1)
-        {
-            GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,colors[i]);
+        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,colors[i]);
                     i= (i+1)%7;
-
-        }
 }
 void Task1(void* para)
 {
